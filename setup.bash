@@ -3,13 +3,13 @@
 # Get user inputs
 # If val is missing, complain!
 read -p 'SteamCMD Directory: ' cmdLocation
-if [cmdLocation == ""]; then
+if [$cmdLocation == ""]; then
     echo "SteamCMD Directory not specified! Exiting"
     exit 1
 fi
 
 read -p 'CS:GO Directory: ' csLocation
-if [csLocation == ""]; then
+if [$csLocation == ""]; then
     echo "CS:GO Directory not specified! Exiting"
     exit 1
 fi
@@ -34,13 +34,13 @@ fi
 # Install tmux to run server in
 sudo apt-get install -y tmux
 
-if [architecture != "x86_64"] || [architecture != "x86_32"]; then
+if [$architecture != "x86_64"] || [architecture != "x86_32"]; then
     echo "Cannot install steamCMD as system is running $architecture! Exiting!"
     exit 1
 fi
 
 # csgo and steamcmd install
-if [architecture == "x86_64"]; then
+if [$architecture == "x86_64"]; then
     sudo apt-get install -y lib32gcc-s1
     cd "$cmdLocation"
     wget "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" | tar zxvf -

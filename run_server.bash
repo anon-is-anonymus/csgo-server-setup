@@ -9,10 +9,10 @@ read -p 'Server Password: | Leave blank if not needed' serverPass
 read -P 'Game Server Token' gameToken
 
 # If no val specified, set to defaults
-if [csPort == ""]; then
+if [$csPort == ""]; then
     csPort = 27015
 fi
-if [gotvPort == ""]; then
+if [$gotvPort == ""]; then
     gotvPort = 27020
 fi
 
